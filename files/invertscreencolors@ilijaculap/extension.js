@@ -2,10 +2,13 @@
 // https://github.com/linuxmint/cinnamon-spices-applets/tree/master/color-blind-filters%40rcalixte
 // https://github.com/linuxmint/cinnamon-spices-extensions/tree/master/rnbdsh%40negateWindow
 
+// Invert screen colors with user defined keyboard shortcuts
+
 const Lang = imports.lang;
 const Main = imports.ui.main;
 const Clutter = imports.gi.Clutter;
-const HOTKEY = "<Ctrl><Alt>i::"
+const Settings = imports.ui.settings;
+const UUID = "invertscreencolors@ilijaculap";
 
 const InvertScreenEffect = new Lang.Class({
 	Name: 'InvertScreenEffect',
@@ -35,6 +38,9 @@ const InvertScreenEffect = new Lang.Class({
 function init() { }
 function disable() { Main.keybindingManager.removeHotKey("invert-colors-kb"); }
 function enable() {
+    var settings = new Settings.ExtensionSettings(this, UUID);
+    settings.bindProperty(Settings.BindingDirection.IN, 'kb-shortcut', 'kb-shortcut', enable, null);
+    var HOTKEY = settings.getValue("kb-shortcut"); 
 	Main.keybindingManager.addHotKey(
 		"invert-colors-kb",
 		HOTKEY,
@@ -49,3 +55,4 @@ function enable() {
 		}
 	)
 }
+

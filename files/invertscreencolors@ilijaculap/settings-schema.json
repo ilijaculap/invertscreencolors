@@ -1,0 +1,14 @@
+{
+   "keybinding-header": {
+      "type": "header",
+      "description": "Keyboard shortcut"
+   },
+
+   "kb-shortcut": {
+      "type": "keybinding",
+      "default": "<Ctrl><Alt>i::",
+      "description": "Select keyboard shortcut",
+      "tooltip": "Choose keyboard shortcut to activate this effect"
+   }
+}
+
