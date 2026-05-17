@@ -1,14 +1,17 @@
 {
    "keybinding-header": {
       "type": "header",
-      "description": "Keyboard shortcut"
+      "description": "Keyboard shortcuts"
    },
-
-   "kb-shortcut": {
+   "kb-shortcut-fs": {
       "type": "keybinding",
-      "default": "<Ctrl><Alt>i::",
-      "description": "Select keyboard shortcut",
-      "tooltip": "Choose keyboard shortcut to activate this effect"
+      "default": "<Ctrl><Alt>i",
+      "description": "Invert colors for whole screen"
+   },
+   "kb-shortcut-wd": {
+      "type": "keybinding",
+      "default": "<Super>i",
+      "description": "Invert colors for active window"
    }
 }
 
